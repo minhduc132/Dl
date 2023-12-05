@@ -83,18 +83,18 @@
                     <button class="tablink" onclick="openPage('Specials', this, '')">
                         <i class="fa-solid fa-plane"></i>+<i class="fa-solid fa-bed"></i>
                         Specials</button>
-                    <button class="tablink" onclick="openPage('Package', this, '')">
-                        <i class="fa-solid fa-camera"></i>
-                        TourPackage</button>
                     <button class="tablink" onclick="openPage('FWWC', this, '')">
                         <i class="fa-solid fa-futbol"></i>
                         FWWC</button>
+                    <button class="tablink" onclick="openPage('Package', this, '')">
+                        <i class="fa-solid fa-camera"></i>
+                        TourPackage</button>
                 </div>
                 <div id="Flight" class="tabcontent">
-                    <div class="row" >
-                        <div class="select_list" >
+                    <div class="row">
+                        <div class="select_list">
                             <!-- Origin -->
-                            <span class="txt2" >Origin</span>
+                            <span class="txt2">Origin</span>
                             <select class="origin js-example-basic-multiple"  multiple="multiple"  data-placeholder="City or Airport">
                                 <option value="A" >Adelaide (ADL), Australia</option>
                                 <option value="B">Albany (ALH), Australia</option>
@@ -133,14 +133,14 @@
                             <div class="wrap-inputtraveller">
                                 <span class="txt2" >Traveller (s) </span>
                                 <div class="ipt-show" onclick= "travellerFunction()"  >
-                                    <span id="room_info">1 Rooms</span>
+                                    <span id="room_info" >1 Rooms</span>
                                     <span id="guests_info">2 Pax(s)</span>
                                 </div>
                             </div>
                             <!--Traveller open-->
-                            <div class="traveller" id="traveller">
-                                <div id="render"></div>
-<!--add Room   -->              <button id="add_room" class="add_room" ><i class="fa-solid fa-plus">Add Room</i></button>
+                            <div class="traveller" id="traveller_flight">
+                                <div id="render_flight"></div>
+                                <!--add Room   -->              <button id="add_room" class="add_room" ><i class="fa-solid fa-plus">Add Room</i></button>
                                 <div id="maxPassengersMessage" style="display: none; color: red; font-size: 10px;">You can only select a maximum of 9 passengers (excluding infants on lap) per booking</div>
                                 <div id="text" style="color: #e51010;display: none;;font-size: 10px;float: left;width: 100%">Max 3 rooms are allowed per booking</div>
                                 <h4 style="font-size: 10px">Age of children/infants should be considered from the date of departure</h4>
@@ -192,25 +192,10 @@
                             </div>
                         </div>
                         <div id="oneway" class="oneway_stopover"></div>
-                        <meta charset="UTF-8">
-                        <title>test</title>
-                        <meta name="viewport" content="width=device-width, initial-scale=1">
-                        <link rel="stylesheet" href="css/home.css">
-                        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-                        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-                        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-                        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-                        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-                        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-                        </head>    <div class="select_list"   style="margin-left: -192px">
+                        <div class="select_list"   style="margin-left: -192px">
                             <!-- Origin -->
                             <span class="txt2" >Origin</span>
-                            <select class="origin js-example-basic-multiple"   multiple="multiple" data-placeholder="City or Airport"> >
+                            <select class="origin js-example-basic-multiple"   multiple="multiple" data-placeholder="City or Airport" >
                                 <option value="A" >Adelaide (ADL), Australia</option>
                                 <option value="B">Albany (ALH), Australia</option>
                                 <option value="C">Albury (ABX), Australia</option>
@@ -246,17 +231,18 @@
                         </div>
                         <div class="select_list"><!-- Traveller -->
                             <div class="wrap-inputtraveller">
-                            <span class="txt2">Max Travellers</span>
+                                <span class="txt2">Max Travellers</span>
                                 <div class="ipt-show"   onclick= "travellerstopoverFunction()">
-                                <span id="room_info_stop" >1 Rooms</span>
-                                <span id="guests_info_stop">2 Pax(s)</span>
+                                    <span id="room_info_stopover" >1 Rooms</span>
+                                    <span id="guests_info_stopover">2 Pax(s)</span>
                                 </div>
                             </div>
+
                             <!--Traveller open-->
                             <div class="traveller" id="traveller_stopover">
-                                <div id="render_stop"></div>
+                                <div id="render_stopover"></div>
                                 <!--add Room   -->
-                                <button id="add_room_stop" class="add_room_stop"><i class="fa-solid fa-plus">Add Room</i></button>
+                                <button id="add_room_stop" class="add_room"><i class="fa-solid fa-plus">Add Room</i></button>
                                 <div id="maxPassengersMessage_stop" style="display: none; color: red; font-size: 10px;">You can only select a maximum of 9 passengers (excluding infants on lap) per booking</div>
                                 <div id="text_stop" style="color: #e51010;display: none;;font-size: 10px;float: left;width: 100%">Max 3 rooms are allowed per booking</div>
                                 <h4 style="font-size: 10px">Age of children/infants should be considered from the date of departure</h4>
@@ -306,112 +292,112 @@
                     </div>
                 </div>
                 <div id="Hotel" class="tabcontent">
-                        <div class="row" >
-                            <div class="select_list"><!-- Destination -->
-                                <span class="txt2" >Where are you going?</span>
-                                    <select class="destination  js-example-basic-multiple"  multiple="multiple" data-placeholder="destination,hotel,landmark or Airport">>
-                                    <option value="A" >Adelaide (ADL), Australia</option>
-                                    <option value="B">Albany (ALH), Australia</option>
-                                    <option value="C">Albury (ABX), Australia</option>
-                                    <option value="D">Armidale (ARM), Australia</option>
-                                    <option value="E">Ballina (BNK), Australia</option>
-                                    <option value="F">Bendigo (BXG), Australia</option>
-                                    <option value="G">Brisbane (BNE), Australia</option>
-                                    <option value="H">Hanoi (HAN), Vietnam</option>
-                                    <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
-                                </select>
-                            </div>
-                            <div class="select_list" >
-                                <span class="txt2" >check-in</span>
-                                <input  class="size_input" type="text" name="departing" value="02/14/2023"  style="width: 12em;" readonly >
-                            </div>
-                            <div class="select_list" >
-                                <span class="txt2">check-out</span>
-                                <input  class="size_input" type="text"  name="returning" value="12/17/2023"  style="width: 12em;"  readonly></div>
-                            <div class="select_list"><!-- Traveller -->
-                                <div class="wrap-inputtraveller">
-                                    <span class="txt2">Travellers</span>
-                                    <input  class="size_input"    onclick= "travellerhotelFunction()"  value=""  readonly style="width: 12em"></div>
-                                <!--Traveller open-->
-                                <div class="traveller" id="traveller_hotel">
-                                    <div class="text_Room">
-                                        <label>Room 1</label>
-                                    </div>
-                                    <div class="add_traveller">
-                                        <p>Adults (18+)</p>
-                                        <div class="from_traveller">
-                                            <div class="input-group-prepend">
-                                                <button class="input_number"><i class="fa-solid fa-minus"></i></button>
-                                            </div>
-                                            <input class="from_traveller" name="quantity" value="1" min="0" max="9" type="number">
-                                            <div class="input-group-append">
-                                                <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
-                                            </div>
+                    <div class="row" >
+                        <div class="select_list"><!-- Destination -->
+                            <span class="txt2" >Where are you going?</span>
+                            <select class="destination  js-example-basic-multiple"  multiple="multiple" data-placeholder="Destination,hotel,landmark or Airport">>
+                                <option value="A" >Adelaide (ADL), Australia</option>
+                                <option value="B">Albany (ALH), Australia</option>
+                                <option value="C">Albury (ABX), Australia</option>
+                                <option value="D">Armidale (ARM), Australia</option>
+                                <option value="E">Ballina (BNK), Australia</option>
+                                <option value="F">Bendigo (BXG), Australia</option>
+                                <option value="G">Brisbane (BNE), Australia</option>
+                                <option value="H">Hanoi (HAN), Vietnam</option>
+                                <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
+                            </select>
+                        </div>
+                        <div class="select_list" >
+                            <span class="txt2" >check-in</span>
+                            <input  class="size_input" type="text" name="departing" value="02/14/2023"  style="width: 12em;" readonly >
+                        </div>
+                        <div class="select_list" >
+                            <span class="txt2">check-out</span>
+                            <input  class="size_input" type="text"  name="returning" value="12/17/2023"  style="width: 12em;"  readonly></div>
+                        <div class="select_list"><!-- Traveller -->
+                            <div class="wrap-inputtraveller">
+                                <span class="txt2">Travellers</span>
+                                <input  class="size_input"    onclick= "travellerhotelFunction()"  value=""  readonly style="width: 12em"></div>
+                            <!--Traveller open-->
+                            <div class="traveller" id="traveller_hotel">
+                                <div class="text_Room">
+                                    <label>Room 1</label>
+                                </div>
+                                <div class="add_traveller">
+                                    <p>Adults (18+)</p>
+                                    <div class="from_traveller">
+                                        <div class="input-group-prepend">
+                                            <button class="input_number"><i class="fa-solid fa-minus"></i></button>
                                         </div>
-                                    </div>
-                                    <div class="add_traveller">
-                                        <p>Children (2-17)</p>
-                                        <div class="from_traveller">
-                                            <div class="input-group-prepend">
-                                                <button class="input_number"><i class="fa-solid fa-minus"></i></button>
-                                            </div>
-                                            <input class="from_traveller" name="quantity" value="0" min="0" max="6" type="number">
-                                            <div class="input-group-append">
-                                                <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="add_traveller">
-                                        <p>Infants (< 24 mths)</p>
-                                        <div class="from_traveller">
-                                            <div class="input-group-prepend">
-                                                <button class="input_number"><i class="fa-solid fa-minus"></i></button>
-                                            </div>
-                                            <input class="from_traveller" name="quantity" value="0" min="0" max="2" type="number">
-                                            <div class="input-group-append">
-                                                <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
-                                            </div>
+                                        <input class="from_traveller" name="quantity" value="1" min="0" max="9" type="number">
+                                        <div class="input-group-append">
+                                            <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="select_list">
-                                <div class="wrap-inputsearch">
-                                    <input class="size_input" type="submit" value="Search>" onclick="searchFunction()" style ="width:12em; background: #ffa903;height: 37px; margin-top: 20px;margin-bottom: 20px;">
+                                <div class="add_traveller">
+                                    <p>Children (2-17)</p>
+                                    <div class="from_traveller">
+                                        <div class="input-group-prepend">
+                                            <button class="input_number"><i class="fa-solid fa-minus"></i></button>
+                                        </div>
+                                        <input class="from_traveller" name="quantity" value="0" min="0" max="6" type="number">
+                                        <div class="input-group-append">
+                                            <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add_traveller">
+                                    <p>Infants (< 24 mths)</p>
+                                    <div class="from_traveller">
+                                        <div class="input-group-prepend">
+                                            <button class="input_number"><i class="fa-solid fa-minus"></i></button>
+                                        </div>
+                                        <input class="from_traveller" name="quantity" value="0" min="0" max="2" type="number">
+                                        <div class="input-group-append">
+                                            <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="select_list">
+                            <div class="wrap-inputsearch">
+                                <input class="size_input" type="submit" value="Search>" onclick="searchFunction()" style ="width:12em; background: #ffa903;height: 37px; margin-top: 20px;margin-bottom: 20px;">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="Tours" class="tabcontent">
-                        <div class="row" >
-                            <div class="select_list"><!-- Destination -->
-                                <span class="txt2" >Where are you going?</span>
-                                <select class="destination  js-example-basic-multiple"  multiple="multiple">
-                                    <option value="A" >Adelaide (ADL), Australia</option>
-                                    <option value="B">Albany (ALH), Australia</option>
-                                    <option value="C">Albury (ABX), Australia</option>
-                                    <option value="D">Armidale (ARM), Australia</option>
-                                    <option value="E">Ballina (BNK), Australia</option>
-                                    <option value="F">Bendigo (BXG), Australia</option>
-                                    <option value="G">Brisbane (BNE), Australia</option>
-                                    <option value="H">Hanoi (HAN), Vietnam</option>
-                                    <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
-                                </select>
-                            </div>
-                            <div class="select_list" >
-                                <span class="txt2" >Departing</span>
-                                <input  class="size_input" type="text"  name="departing" value="02/14/2023"  readonly >
-                            </div>
-                            <div class="select_list" >
-                                <span class="txt2">Returning</span>
-                                <input  class="size_input" type="text"  name="returning" value="12/17/2023"   readonly>
-                            </div>
-                            <div class="select_list">
-                                <div class="wrap-inputsearch">
-                                    <input class="size_input" type="submit" value="Search>" onclick="searchFunction()" style =" background: #ffa903;height: 37px; margin-top: 20px;margin-bottom: 20px;">
-                                </div>
+                    <div class="row" >
+                        <div class="select_list"><!-- Destination -->
+                            <span class="txt2" >Where are you going?</span>
+                            <select class="destination  js-example-basic-multiple"  multiple="multiple" data-placeholder="Choose a city...">
+                                <option value="A" >Adelaide (ADL), Australia</option>
+                                <option value="B">Albany (ALH), Australia</option>
+                                <option value="C">Albury (ABX), Australia</option>
+                                <option value="D">Armidale (ARM), Australia</option>
+                                <option value="E">Ballina (BNK), Australia</option>
+                                <option value="F">Bendigo (BXG), Australia</option>
+                                <option value="G">Brisbane (BNE), Australia</option>
+                                <option value="H">Hanoi (HAN), Vietnam</option>
+                                <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
+                            </select>
+                        </div>
+                        <div class="select_list" >
+                            <span class="txt2" >Departing</span>
+                            <input  class="size_input" type="text"  name="departing" value="02/14/2023"  readonly >
+                        </div>
+                        <div class="select_list" >
+                            <span class="txt2">Returning</span>
+                            <input  class="size_input" type="text"  name="returning" value="12/17/2023"   readonly>
+                        </div>
+                        <div class="select_list">
+                            <div class="wrap-inputsearch">
+                                <input class="size_input" type="submit" value="Search>" onclick="searchFunction()" style =" background: #ffa903;height: 37px; margin-top: 20px;margin-bottom: 20px;">
                             </div>
                         </div>
+                    </div>
                 </div>
                 <div id="Transfers" class="tabcontent">
                     <div id="check_tra" style="    height: 39px;width: 100%;">
@@ -428,97 +414,97 @@
                             <label for="checks">One-way To Airport</label>
                         </div>
                     </div>
-                        <div class="row" style="width:100%" >
-                            <div class="select_list_s"><!-- Destination -->
-                                <span class="txt2" >Drop-up Point</span>
-                                <select class="origin  js-example-basic-multiple" multiple="multiple"  data-placeholder="City or Airport">
-                                    <option value="A" >Adelaide (ADL), Australia</option>
-                                    <option value="B">Albany (ALH), Australia</option>
-                                    <option value="C">Albury (ABX), Australia</option>
-                                    <option value="D">Armidale (ARM), Australia</option>
-                                    <option value="E">Ballina (BNK), Australia</option>
-                                    <option value="F">Bendigo (BXG), hoAustralia</option>
-                                    <option value="G">Brisbane (BNE), Australia</option>
-                                    <option value="H">Hanoi (HAN), Vietnam</option>
-                                    <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
-                                </select>
-                            </div>
+                    <div class="row" style="width:100%" >
+                        <div class="select_list_s"><!-- Destination -->
+                            <span class="txt2" >Drop-up Point</span>
+                            <select class="origin  js-example-basic-multiple" multiple="multiple"  data-placeholder="City or Airport">
+                                <option value="A" >Adelaide (ADL), Australia</option>
+                                <option value="B">Albany (ALH), Australia</option>
+                                <option value="C">Albury (ABX), Australia</option>
+                                <option value="D">Armidale (ARM), Australia</option>
+                                <option value="E">Ballina (BNK), Australia</option>
+                                <option value="F">Bendigo (BXG), hoAustralia</option>
+                                <option value="G">Brisbane (BNE), Australia</option>
+                                <option value="H">Hanoi (HAN), Vietnam</option>
+                                <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
+                            </select>
+                        </div>
 
-                            <div class="select_list_s"><!-- Destination -->
-                                <span class="txt2" >Drop-off Point</span>
-                                <select class="hidden  js-example-basic-hide-search"  multiple="multiple">
-                                    <option value="A" >Adelaide (ADL), Australia</option>
-                                    <option value="B">Albany (ALH), Australia</option>
-                                    <option value="C">Albury (ABX), Australia</option>
-                                    <option value="D">Armidale (ARM), Australia</option>
-                                    <option value="E">Ballina (BNK), Australia</option>
-                                    <option value="F">Bendigo (BXG), Australia</option>
-                                    <option value="G">Brisbane (BNE), Australia</option>
-                                    <option value="H">Hanoi (HAN), Vietnam</option>
-                                    <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
-                                </select>
-                            </div>
-                            <div class="select_list_s" >
-                                <span class="txt2" >Pick-up Date</span>
-                                <input  class="size_input" type="text"  name="departing" value="02/14/2023"  readonly >
-                            </div>
-                            <div class="select_list_s" id="returnupdate" >
-                                <span class="txt2">Return Pick-up Date</span>
-                                <input  class="size_input" type="text"  name="returning" value="12/17/2023"   readonly>
-                            </div>
-                            <div class="select_list_s"><!-- Traveller -->
-                                <div class="wrap-inputtraveller">
-                                    <span class="txt2">Traveller(s)</span>
-                                    <input  class="size_input"    onclick= "travellertransfersFunction()"  value=""  readonly ></div>
-                                <!--Traveller open-->
-                                <div class="traveller" id="traveller_transfers">
-                                    <div class="text_Room">
-                                        <label>Room 1</label>
-                                    </div>
-                                    <div class="add_traveller">
-                                        <p>Adults (18+)</p>
-                                        <div class="from_traveller">
-                                            <div class="input-group-prepend">
-                                                <button class="input_number"><i class="fa-solid fa-minus"></i></button>
-                                            </div>
-                                            <input class="from_traveller" name="quantity" value="1" min="0" max="9" type="number">
-                                            <div class="input-group-append">
-                                                <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
-                                            </div>
+                        <div class="select_list_s"><!-- Destination -->
+                            <span class="txt2" >Drop-off Point</span>
+                            <select class="hidden  js-example-basic-hide-search"  multiple="multiple" data-placeholder="Host name,location...">
+                                <option value="A" >Adelaide (ADL), Australia</option>
+                                <option value="B">Albany (ALH), Australia</option>
+                                <option value="C">Albury (ABX), Australia</option>
+                                <option value="D">Armidale (ARM), Australia</option>
+                                <option value="E">Ballina (BNK), Australia</option>
+                                <option value="F">Bendigo (BXG), Australia</option>
+                                <option value="G">Brisbane (BNE), Australia</option>
+                                <option value="H">Hanoi (HAN), Vietnam</option>
+                                <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
+                            </select>
+                        </div>
+                        <div class="select_list_s" >
+                            <span class="txt2" >Pick-up Date</span>
+                            <input  class="size_input" type="text"  name="departing" value="02/14/2023"  readonly >
+                        </div>
+                        <div class="select_list_s" id="returnupdate" >
+                            <span class="txt2">Return Pick-up Date</span>
+                            <input  class="size_input" type="text"  name="returning" value="12/17/2023"   readonly>
+                        </div>
+                        <div class="select_list_s"><!-- Traveller -->
+                            <div class="wrap-inputtraveller">
+                                <span class="txt2">Traveller(s)</span>
+                                <input  class="size_input"    onclick= "travellertransfersFunction()"  value=""  readonly ></div>
+                            <!--Traveller open-->
+                            <div class="traveller" id="traveller_transfers">
+                                <div class="text_Room">
+                                    <label>Room 1</label>
+                                </div>
+                                <div class="add_traveller">
+                                    <p>Adults (18+)</p>
+                                    <div class="from_traveller">
+                                        <div class="input-group-prepend">
+                                            <button class="input_number"><i class="fa-solid fa-minus"></i></button>
                                         </div>
-                                    </div>
-                                    <div class="add_traveller">
-                                        <p>Children (2-17)</p>
-                                        <div class="from_traveller">
-                                            <div class="input-group-prepend">
-                                                <button class="input_number"><i class="fa-solid fa-minus"></i></button>
-                                            </div>
-                                            <input class="from_traveller" name="quantity" value="0" min="0" max="6" type="number">
-                                            <div class="input-group-append">
-                                                <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="add_traveller">
-                                        <p>Infants (< 24 mths)</p>
-                                        <div class="from_traveller">
-                                            <div class="input-group-prepend">
-                                                <button class="input_number"><i class="fa-solid fa-minus"></i></button>
-                                            </div>
-                                            <input class="from_traveller" name="quantity" value="0" min="0" max="2" type="number">
-                                            <div class="input-group-append">
-                                                <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
-                                            </div>
+                                        <input class="from_traveller" name="quantity" value="1" min="0" max="9" type="number">
+                                        <div class="input-group-append">
+                                            <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="select_list_s">
-                                <div class="wrap-inputsearch">
-                                    <input class="size_input" type="submit" value="Search>" onclick="searchFunction()" style =" background: #ffa903;height: 37px; margin-top: 20px;margin-bottom: 20px;">
+                                <div class="add_traveller">
+                                    <p>Children (2-17)</p>
+                                    <div class="from_traveller">
+                                        <div class="input-group-prepend">
+                                            <button class="input_number"><i class="fa-solid fa-minus"></i></button>
+                                        </div>
+                                        <input class="from_traveller" name="quantity" value="0" min="0" max="6" type="number">
+                                        <div class="input-group-append">
+                                            <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add_traveller">
+                                    <p>Infants (< 24 mths)</p>
+                                    <div class="from_traveller">
+                                        <div class="input-group-prepend">
+                                            <button class="input_number"><i class="fa-solid fa-minus"></i></button>
+                                        </div>
+                                        <input class="from_traveller" name="quantity" value="0" min="0" max="2" type="number">
+                                        <div class="input-group-append">
+                                            <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="select_list_s">
+                            <div class="wrap-inputsearch">
+                                <input class="size_input" type="submit" value="Search>" onclick="searchFunction()" style =" background: #ffa903;height: 37px; margin-top: 20px;margin-bottom: 20px;">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="Specials" class="tabcontent">
                     <h1 style="text-align: center">There are currently no special offers available.</h1>
@@ -526,37 +512,37 @@
                 <div id="Package" class="tabcontent">
                     <div class="row" >
                         <div class="select_list" >
-                                    <!-- Origin -->
-                                    <span class="txt2" >Origin</span>
-                                    <select class="origin js-example-basic-multiple"  multiple="multiple"  >
-                                        <option value="A" >Adelaide (ADL), Australia</option>
-                                        <option value="B">Albany (ALH), Australia</option>
-                                        <option value="C">Albury (ABX), Australia</option>
-                                        <option value="D">Armidale (ARM), Australia</option>
-                                        <option value="E">Ballina (BNK), Australia</option>
-                                        <option value="F">Bendigo (BXG), Australia</option>
-                                        <option value="G">Brisbane (BNE), Australia</option>
-                                        <option value="H">Hanoi (HAN), Vietnam</option>
-                                        <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
-                                    </select>
-                                </div>
+                            <!-- Origin -->
+                            <span class="txt2" >Origin</span>
+                            <select class="origin js-example-basic-multiple"  multiple="multiple" data-placeholder="City or Airport"  >
+                                <option value="A" >Adelaide (ADL), Australia</option>
+                                <option value="B">Albany (ALH), Australia</option>
+                                <option value="C">Albury (ABX), Australia</option>
+                                <option value="D">Armidale (ARM), Australia</option>
+                                <option value="E">Ballina (BNK), Australia</option>
+                                <option value="F">Bendigo (BXG), Australia</option>
+                                <option value="G">Brisbane (BNE), Australia</option>
+                                <option value="H">Hanoi (HAN), Vietnam</option>
+                                <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
+                            </select>
+                        </div>
                         <div class="select_list"><!-- Destination -->
-                                    <span class="txt2" >Destination</span>
-                                    <select class="destination js-example-basic-multiple" multiple="multiple" >
-                                        <option value="A" >Adelaide (ADL), Australia</option>
-                                        <option value="B">Albany (ALH), Australia</option>
-                                        <option value="C">Albury (ABX), Australia</option>
-                                        <option value="D">Armidale (ARM), Australia</option>
-                                        <option value="E">Ballina (BNK), Australia</option>
-                                        <option value="F">Bendigo (BXG), Australia</option>
-                                        <option value="G">Brisbane (BNE), Australia</option>
-                                        <option value="H">Hanoi (HAN), Vietnam</option>
-                                        <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
-                                    </select>
-                                </div>
+                            <span class="txt2" >Destination</span>
+                            <select class="destination js-example-basic-multiple" multiple="multiple" data-placeholder="City or Airport">
+                                <option value="A" >Adelaide (ADL), Australia</option>
+                                <option value="B">Albany (ALH), Australia</option>
+                                <option value="C">Albury (ABX), Australia</option>
+                                <option value="D">Armidale (ARM), Australia</option>
+                                <option value="E">Ballina (BNK), Australia</option>
+                                <option value="F">Bendigo (BXG), Australia</option>
+                                <option value="G">Brisbane (BNE), Australia</option>
+                                <option value="H">Hanoi (HAN), Vietnam</option>
+                                <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
+                            </select>
+                        </div>
                         <div class="select_list" >
-                                    <span class="txt2" >Departing</span>
-                                    <input class="size_input" type="text"  name="departing" value="02/14/2023"  readonly >
+                            <span class="txt2" >Departing</span>
+                            <input class="size_input" type="text"  name="departing" value="02/14/2023"  readonly >
                         </div>
                         <div class="select_list"><!-- Traveller -->
                             <div class="wrap-inputtraveller">
@@ -611,9 +597,9 @@
                                 <input class="size_input" type="submit" value="Search>" onclick="searchFunction()" style ="background: #ffa903;width:229px;height: 37px; margin-top: 20px;">
                             </div>
                         </div>
-                        </div>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 </div>
@@ -627,8 +613,7 @@
         </div>
     </div>
 </div>
-<script src="js/home.js"></script>
-<script src="js/language.js"></script>
+<script src="js/home./home.js"></script>
 <script>
     function openPage(pageName,elmnt,color) {
         var i, tabcontent, tablinks;
@@ -677,12 +662,13 @@
     $(document).ready(function() {
         $('.js-example-basic-multiple').select2({
             maximumSelectionLength:1,
+
         });
     });
-        $('#select2').select2({
-            minimumResultsForSearch: 'Infinity',
-            placeholder: "search"
+    $('#select2').select2({
+        minimumResultsForSearch: 'Infinity',
+        placeholder: "search"
     });
-        $('.hidden').attr('disabled','true');
+    $('.hidden').attr('disabled','true');
 </script>
 </html>

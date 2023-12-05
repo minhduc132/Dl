@@ -96,6 +96,10 @@ a{
 .select2-container--default .select2-selection--single {
     height:37px !important;
 }
+.select2-container .select2-search__field {
+    width: 100% !important;
+}
+
 /*.destination{*/
 /*    width: 16.5em;*/
 /*}*/
@@ -198,6 +202,8 @@ h2{
     width: 28px;
     border: 1px solid #ffffff;
 }
+
+
 .close_room3{
     margin-left: 485px;
     border-radius: 50%;
@@ -371,7 +377,7 @@ h2{
     width: 16.5em;
     height: 37px;
 }
-#add_room{
+.add_room{
     font-size: 10px;
     margin-left: 3px;
     color: #850b48;
