@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Qatarairways</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<div id="body">
+    <div class="logo">
+        <span><img src="image/Screenshot%20(1231).png"  alt="Screenshot" class="responsive" height="90" width="500"/></span>
+    </div>
+    <div class="top-menu" >
+        <div class="topnav">
+            <ul>
+                <li><span class="icon" >
+                            <img src="image/images.png" height="15px" width="15px"/></span>
+                    <button id="myBtn" style=" border: 0px; background: #fff;">English </button>
+                    <div id="myModal" class="modal">
+                        <div class="modal-content" style="height: 170px;">
+                            <span class="close">&times;</span>
+                            <h3>Select language</h3>
+                            <a href="#" id="en-US">en-US English</a>
+                            <a href="#" id="it-IT">it-IT Italian</a>
+                            <a href="#" id="de-DE">de-DE German</a>
+                            <a href="#" id="fr-FR">fr-FR French</a>
+                            <a href="#" id="es-Es">es-Es Spanish</a>
+                            <a href="#" id="bt-PR">bt-PR Brazilian Portuguese</a>
+                        </div>
+                    </div>
+
+                </li>
+                <li>
+                                <span class="icon" >
+                                <img src="image/94874.png" height="15px" width="15px"/></span>
+                    <button  style=" border: 0px; background: #fff;">USD </button>
+                </li>
+                <li>
+                    <span class="icon">
+                                <img src="image/tải%20xuống.png" height="17px" width="17px"/></span>
+                    <button onclick="loginFunction()"
+                            style=" border: 0px; background: #fff;"> Sign in</button>
+                </li>
+                <li>
+                                <span class="icon" >
+                                    <a  title="Sign up  ">Sign up  </a></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="container">
+    <br>
+    <div class="content">
+        <div class="search-wap" >
+            <div class="widget_list_categories">
+                <div id="packages" >
+                    <button class="tablink" onclick="openPage('Flight', this,'')" id="defaultOpen" >
+                        <i class="fa-solid fa-plane"></i>+<i class="fa-solid fa-bed"></i>
+                        Flight+Hotel</button>
+                    <button class="tablink" onclick="openPage('Stopover', this, '')" >
+                        <i class="fa-solid fa-plane"></i>Flight+Stopover</button>
+                    <button class="tablink" onclick="openPage('Hotel', this, '')">
+                        <i class="fa-solid fa-bed"></i>Hotel</button>
+                    <button class="tablink" onclick="openPage('Tours', this, '')">
+                        <i class="fa-solid fa-camera"></i>
+                        Tours</button>
+                    <button class="tablink" onclick="openPage('Transfers', this, '')">
+                        <i class="fa-solid fa-bus-simple"></i>
+                        Transfers</button>
+                    <button class="tablink" onclick="openPage('Specials', this, '')">
+                        <i class="fa-solid fa-plane"></i>+<i class="fa-solid fa-bed"></i>
+                        Specials</button>
+                    <button class="tablink" onclick="openPage('Package', this, '')">
+                        <i class="fa-solid fa-camera"></i>
+                        TourPackage</button>
+                    <button class="tablink" onclick="openPage('FWWC', this, '')">
+                        <i class="fa-solid fa-futbol"></i>
+                        FWWC</button>
+                </div>
+                <div id="Flight" class="tabcontent">
+                    <div class="row" >
+                        <div class="select_list" >
+                            <!-- Origin -->
+                            <span class="txt2" >Origin</span>
+                            <select class="origin js-example-basic-multiple"  multiple="multiple"  data-placeholder="City or Airport">
+                                <option value="A" >Adelaide (ADL), Australia</option>
+                                <option value="B">Albany (ALH), Australia</option>
+                                <option value="C">Albury (ABX), Australia</option>
+                                <option value="D">Armidale (ARM), Australia</option>
+                                <option value="E">Ballina (BNK), Australia</option>
+                                <option value="F">Bendigo (BXG), Australia</option>
+                                <option value="G">Brisbane (BNE), Australia</option>
+                                <option value="H">Hanoi (HAN), Vietnam</option>
+                                <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
+                            </select>
+                        </div>
+                        <div class="select_list"><!-- Destination -->
+                            <span class="txt2" >Destination</span>
+                            <select class="destination js-example-basic-multiple" multiple="multiple"  data-placeholder="City or Airport">
+                                <option value="A" >Adelaide (ADL), Australia</option>
+                                <option value="B">Albany (ALH), Australia</option>
+                                <option value="C">Albury (ABX), Australia</option>
+                                <option value="D">Armidale (ARM), Australia</option>
+                                <option value="E">Ballina (BNK), Australia</option>
+                                <option value="F">Bendigo (BXG), Australia</option>
+                                <option value="G">Brisbane (BNE), Australia</option>
+                                <option value="H">Hanoi (HAN), Vietnam</option>
+                                <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
+                            </select>
+                        </div>
+                        <div class="select_list" >
+                            <span class="txt2" >Departing</span>
+                            <input class="size_input" type="text"  name="departing" value="02/14/2023"  readonly >
+                        </div>
+                        <div class="select_list"><!-- Departing -->
+                            <span  class="txt2">Returning</span>
+                            <input class="size_input" type="text"  name="returning" value="12/17/2023"  readonly>
+                        </div>
+                        <div class="select_list"><!-- Traveller -->
+                            <div class="wrap-inputtraveller">
+                                <span class="txt2" >Traveller (s) </span>
+                                <div class="ipt-show" onclick= "travellerFunction()"  >
+                                    <span id="room_info">1 Rooms</span>
+                                    <span id="guests_info">2 Pax(s)</span>
+                                </div>
+                            </div>
+                            <!--Traveller open-->
+                            <div class="traveller" id="traveller">
+                                <div id="render"></div>
+<!--add Room   -->              <button id="add_room" class="add_room" ><i class="fa-solid fa-plus">Add Room</i></button>
+                                <div id="maxPassengersMessage" style="display: none; color: red; font-size: 10px;">You can only select a maximum of 9 passengers (excluding infants on lap) per booking</div>
+                                <div id="text" style="color: #e51010;display: none;;font-size: 10px;float: left;width: 100%">Max 3 rooms are allowed per booking</div>
+                                <h4 style="font-size: 10px">Age of children/infants should be considered from the date of departure</h4>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <span class="txt2" >Cabin Class</span>
+                            <input   id="cabin" onclick="myFunction()" class="dropbtn" placeholder="Economy" value="" readonly>
+                            <div id="myDropdown" class="dropdown_content" >
+                                <div class="radio-pure">
+                                    <label><input  id="economy"   onclick="economy()" type="radio" name="CabinClass_flight" value="economy" checked > Economy</label></div>
+                                <div class="radio-pure">
+                                    <label><input id="business"  onclick="business()" type="radio" name="CabinClass_flight" value="business" >        Business</label></div>
+                                <div class="radio-pure">
+                                    <label><input id="first"      onclick="first()" type="radio" name="CabinClass_flight" value="first">              First</label></div>
+                            </div>
+                        </div>
+                        <div class="select_list">
+                            <div class="wrap-inputsearch">
+                                <input class="size_input" type="submit" value="Search>" onclick="searchFunction()" style ="background: #ffa903;width:229px;height: 37px; margin-top: 20px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="check_box" style="margin-left: 30px;margin-top: 40px;">
+                        <input type="checkbox" id="myCheck" onclick="checkboxFunction()">
+                        <label for="myCheck" style=" font-weight: 500">I only need a hotel for part of my trip</label>
+                        <div id="checkbox" style="display: none;height: 100px">
+                            <div class="select_list"   style="margin-left: 0em" >
+                                <span class="txt2" >Departing</span>
+                                <input class="size_input" type="text"  name="departing" value="02/14/2023" readonly>
+                            </div>
+                            <div class="select_list" style="margin-left: 272px; margin-top: -55px;">
+                                <span  class="txt2">Returning</span>
+                                <input  class="size_input"  type="text" name="returning" value="12/17/2023"  readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Stopover" class="tabcontent">
+                    <div class="row">
+                        <div id="check_radio">
+                            <div class="circlecheck">
+                                <input type="radio" id="check" class="circle-2" onclick="roundFunction()" name="selectors" checked="checked">
+                                <label for="check">Round Trip</label>
+                            </div>
+                            <div class="circlecheck">
+                                <input type="radio" id="checks" class="circle-2" onclick="onewayFunction()" name="selectors">
+                                <label for="checks">One-way</label>
+                            </div>
+                        </div>
+                        <div id="oneway" class="oneway_stopover"></div>
+                        <meta charset="UTF-8">
+                        <title>test</title>
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <link rel="stylesheet" href="css/home.css">
+                        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+                        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+                        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+                        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+                        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                        </head>    <div class="select_list"   style="margin-left: -192px">
+                            <!-- Origin -->
+                            <span class="txt2" >Origin</span>
+                            <select class="origin js-example-basic-multiple"   multiple="multiple" data-placeholder="City or Airport"> >
+                                <option value="A" >Adelaide (ADL), Australia</option>
+                                <option value="B">Albany (ALH), Australia</option>
+                                <option value="C">Albury (ABX), Australia</option>
+                                <option value="D">Armidale (ARM), Australia</option>
+                                <option value="E">Ballina (BNK), Australia</option>
+                                <option value="F">Bendigo (BXG), Australia</option>
+                                <option value="G">Brisbane (BNE), Australia</option>
+                                <option value="H">Hanoi (HAN), Vietnam</option>
+                                <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
+                            </select>
+                        </div>
+                        <div class="select_list"><!-- Destination -->
+                            <span class="txt2" >Destination</span>
+                            <select class="destination js-example-basic-multiple"   multiple="multiple" data-placeholder="City or Airport">>
+                                <option value="A" >Adelaide (ADL), Australia</option>
+                                <option value="B">Albany (ALH), Australia</option>
+                                <option value="C">Albury (ABX), Australia</option>
+                                <option value="D">Armidale (ARM), Australia</option>
+                                <option value="E">Ballina (BNK), Australia</option>
+                                <option value="F">Bendigo (BXG), Australia</option>
+                                <option value="G">Brisbane (BNE), Australia</option>
+                                <option value="H">Hanoi (HAN), Vietnam</option>
+                                <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
+                            </select>
+                        </div>
+                        <div class="select_list" >
+                            <span class="txt2" >Departing</span>
+                            <input  class="size_input" type="text"  name="departing" value="02/14/2023"   readonly >
+                        </div>
+                        <div class="select_list" id="onewayreturning">
+                            <span class="txt2">Returning</span>
+                            <input  class="size_input" type="text"  name="returning" value="12/17/2023"   readonly>
+                        </div>
+                        <div class="select_list"><!-- Traveller -->
+                            <div class="wrap-inputtraveller">
+                            <span class="txt2">Max Travellers</span>
+                                <div class="ipt-show"   onclick= "travellerstopoverFunction()">
+                                <span id="room_info_stop" >1 Rooms</span>
+                                <span id="guests_info_stop">2 Pax(s)</span>
+                                </div>
+                            </div>
+                            <!--Traveller open-->
+                            <div class="traveller" id="traveller_stopover">
+                                <div id="render_stop"></div>
+                                <!--add Room   -->
+                                <button id="add_room_stop" class="add_room_stop"><i class="fa-solid fa-plus">Add Room</i></button>
+                                <div id="maxPassengersMessage_stop" style="display: none; color: red; font-size: 10px;">You can only select a maximum of 9 passengers (excluding infants on lap) per booking</div>
+                                <div id="text_stop" style="color: #e51010;display: none;;font-size: 10px;float: left;width: 100%">Max 3 rooms are allowed per booking</div>
+                                <h4 style="font-size: 10px">Age of children/infants should be considered from the date of departure</h4>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <span class="txt2" >Cabin Class</span>
+                            <input  id="cabin_stopover" onclick="stopoverFunction()" class="dropbtn" placeholder="Economy" value="" readonly>
+                            <div id="myDropdown_stopover" class="dropdown_content" >
+                                <div class="radio-pure">
+                                    <label><input  id="economy_stopover"   onclick="economystopoverFunction()" type="radio" name="CabinClass" value="economy" checked> Economy</label></div>
+                                <div class="radio-pure">
+                                    <label><input id="business_stopover"  onclick="businessstopoverFunction()" type="radio" name="CabinClass" value="business">        Business</label></div>
+                                <div class="radio-pure">
+                                    <label><input id="first-stopover"      onclick="firststopoverFunction()" type="radio" name="CabinClass" value="first">              First</label></div>
+                            </div>
+                        </div>
+                        <div class="select_list">
+                            <div class="wrap-inputsearch">
+                                <input class="size_input" type="submit" value="Search>" onclick="searchFunction()" style ="background: #ffa903;width:229px;height: 37px; margin-top: 20px;">
+                            </div>
+                        </div>
+                        <div class ="text_radio">
+                            <h2 style="font-size: 12px;text-align: center;margin-top: 25px;float: left; margin-left: 295px;">
+                                When would you like to add a stop Doha during your journey ?</h2>
+                            <div class="circlecheck">
+                                <input type="radio" id="g-option" class="circle-2" name="selector" checked="checked">
+                                <label for="g-option">Departure</label>
+                            </div>
+                            <div class="circlecheck">
+                                <input type="radio" id="h-option" class="circle-2" name="selector">
+                                <label for="h-option">Return</label>
+                            </div>
+                            <h2 style="font-size: 12px;margin-top: 10px; float: left; margin-left: 360px;">How many nights would you like to stay in Doha ?</h2>
+                            <div class="add_traveller">
+                                <div class="from_traveller" style="margin-top: 60px;margin-left: -175px;">
+                                    <div class="input-group-prepend">
+                                        <button class="input_number" style="border-radius: 50%; border: 2px solid #850b48;; "><i class="fa-solid fa-minus"></i></button>
+                                    </div>
+                                    <input class="from_traveller" name="quantity" value="1" min="0" max="9" type="number" style="width: 40px">
+                                    <div class="input-group-append">
+                                        <button class="input_numbers" style="border-radius: 50%; border: 2px solid #850b48;;"><i class="fa-solid fa-plus "></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Hotel" class="tabcontent">
+                        <div class="row" >
+                            <div class="select_list"><!-- Destination -->
+                                <span class="txt2" >Where are you going?</span>
+                                    <select class="destination  js-example-basic-multiple"  multiple="multiple" data-placeholder="destination,hotel,landmark or Airport">>
+                                    <option value="A" >Adelaide (ADL), Australia</option>
+                                    <option value="B">Albany (ALH), Australia</option>
+                                    <option value="C">Albury (ABX), Australia</option>
+                                    <option value="D">Armidale (ARM), Australia</option>
+                                    <option value="E">Ballina (BNK), Australia</option>
+                                    <option value="F">Bendigo (BXG), Australia</option>
+                                    <option value="G">Brisbane (BNE), Australia</option>
+                                    <option value="H">Hanoi (HAN), Vietnam</option>
+                                    <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
+                                </select>
+                            </div>
+                            <div class="select_list" >
+                                <span class="txt2" >check-in</span>
+                                <input  class="size_input" type="text" name="departing" value="02/14/2023"  style="width: 12em;" readonly >
+                            </div>
+                            <div class="select_list" >
+                                <span class="txt2">check-out</span>
+                                <input  class="size_input" type="text"  name="returning" value="12/17/2023"  style="width: 12em;"  readonly></div>
+                            <div class="select_list"><!-- Traveller -->
+                                <div class="wrap-inputtraveller">
+                                    <span class="txt2">Travellers</span>
+                                    <input  class="size_input"    onclick= "travellerhotelFunction()"  value=""  readonly style="width: 12em"></div>
+                                <!--Traveller open-->
+                                <div class="traveller" id="traveller_hotel">
+                                    <div class="text_Room">
+                                        <label>Room 1</label>
+                                    </div>
+                                    <div class="add_traveller">
+                                        <p>Adults (18+)</p>
+                                        <div class="from_traveller">
+                                            <div class="input-group-prepend">
+                                                <button class="input_number"><i class="fa-solid fa-minus"></i></button>
+                                            </div>
+                                            <input class="from_traveller" name="quantity" value="1" min="0" max="9" type="number">
+                                            <div class="input-group-append">
+                                                <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="add_traveller">
+                                        <p>Children (2-17)</p>
+                                        <div class="from_traveller">
+                                            <div class="input-group-prepend">
+                                                <button class="input_number"><i class="fa-solid fa-minus"></i></button>
+                                            </div>
+                                            <input class="from_traveller" name="quantity" value="0" min="0" max="6" type="number">
+                                            <div class="input-group-append">
+                                                <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="add_traveller">
+                                        <p>Infants (< 24 mths)</p>
+                                        <div class="from_traveller">
+                                            <div class="input-group-prepend">
+                                                <button class="input_number"><i class="fa-solid fa-minus"></i></button>
+                                            </div>
+                                            <input class="from_traveller" name="quantity" value="0" min="0" max="2" type="number">
+                                            <div class="input-group-append">
+                                                <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="select_list">
+                                <div class="wrap-inputsearch">
+                                    <input class="size_input" type="submit" value="Search>" onclick="searchFunction()" style ="width:12em; background: #ffa903;height: 37px; margin-top: 20px;margin-bottom: 20px;">
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div id="Tours" class="tabcontent">
+                        <div class="row" >
+                            <div class="select_list"><!-- Destination -->
+                                <span class="txt2" >Where are you going?</span>
+                                <select class="destination  js-example-basic-multiple"  multiple="multiple">
+                                    <option value="A" >Adelaide (ADL), Australia</option>
+                                    <option value="B">Albany (ALH), Australia</option>
+                                    <option value="C">Albury (ABX), Australia</option>
+                                    <option value="D">Armidale (ARM), Australia</option>
+                                    <option value="E">Ballina (BNK), Australia</option>
+                                    <option value="F">Bendigo (BXG), Australia</option>
+                                    <option value="G">Brisbane (BNE), Australia</option>
+                                    <option value="H">Hanoi (HAN), Vietnam</option>
+                                    <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
+                                </select>
+                            </div>
+                            <div class="select_list" >
+                                <span class="txt2" >Departing</span>
+                                <input  class="size_input" type="text"  name="departing" value="02/14/2023"  readonly >
+                            </div>
+                            <div class="select_list" >
+                                <span class="txt2">Returning</span>
+                                <input  class="size_input" type="text"  name="returning" value="12/17/2023"   readonly>
+                            </div>
+                            <div class="select_list">
+                                <div class="wrap-inputsearch">
+                                    <input class="size_input" type="submit" value="Search>" onclick="searchFunction()" style =" background: #ffa903;height: 37px; margin-top: 20px;margin-bottom: 20px;">
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div id="Transfers" class="tabcontent">
+                    <div id="check_tra" style="    height: 39px;width: 100%;">
+                        <div class="circlecheck">
+                            <input type="radio" id="check_transferss" class="circle-2" onclick="oneFunction()" name="selectors_tra" checked="checked">
+                            <label for="check">Return</label>
+                        </div>
+                        <div class="circlecheck">
+                            <input type="radio" id="check_transfers" class="circle-2" onclick="twoFunction()" name="selectors_tra">
+                            <label for="checks">One-way From Airport</label>
+                        </div>
+                        <div class="circlecheck">
+                            <input type="radio" id="check_transfer" class="circle-2" onclick="threeFunction()" name="selectors_tra">
+                            <label for="checks">One-way To Airport</label>
+                        </div>
+                    </div>
+                        <div class="row" style="width:100%" >
+                            <div class="select_list_s"><!-- Destination -->
+                                <span class="txt2" >Drop-up Point</span>
+                                <select class="origin  js-example-basic-multiple" multiple="multiple"  data-placeholder="City or Airport">
+                                    <option value="A" >Adelaide (ADL), Australia</option>
+                                    <option value="B">Albany (ALH), Australia</option>
+                                    <option value="C">Albury (ABX), Australia</option>
+                                    <option value="D">Armidale (ARM), Australia</option>
+                                    <option value="E">Ballina (BNK), Australia</option>
+                                    <option value="F">Bendigo (BXG), hoAustralia</option>
+                                    <option value="G">Brisbane (BNE), Australia</option>
+                                    <option value="H">Hanoi (HAN), Vietnam</option>
+                                    <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
+                                </select>
+                            </div>
+
+                            <div class="select_list_s"><!-- Destination -->
+                                <span class="txt2" >Drop-off Point</span>
+                                <select class="hidden  js-example-basic-hide-search"  multiple="multiple">
+                                    <option value="A" >Adelaide (ADL), Australia</option>
+                                    <option value="B">Albany (ALH), Australia</option>
+                                    <option value="C">Albury (ABX), Australia</option>
+                                    <option value="D">Armidale (ARM), Australia</option>
+                                    <option value="E">Ballina (BNK), Australia</option>
+                                    <option value="F">Bendigo (BXG), Australia</option>
+                                    <option value="G">Brisbane (BNE), Australia</option>
+                                    <option value="H">Hanoi (HAN), Vietnam</option>
+                                    <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
+                                </select>
+                            </div>
+                            <div class="select_list_s" >
+                                <span class="txt2" >Pick-up Date</span>
+                                <input  class="size_input" type="text"  name="departing" value="02/14/2023"  readonly >
+                            </div>
+                            <div class="select_list_s" id="returnupdate" >
+                                <span class="txt2">Return Pick-up Date</span>
+                                <input  class="size_input" type="text"  name="returning" value="12/17/2023"   readonly>
+                            </div>
+                            <div class="select_list_s"><!-- Traveller -->
+                                <div class="wrap-inputtraveller">
+                                    <span class="txt2">Traveller(s)</span>
+                                    <input  class="size_input"    onclick= "travellertransfersFunction()"  value=""  readonly ></div>
+                                <!--Traveller open-->
+                                <div class="traveller" id="traveller_transfers">
+                                    <div class="text_Room">
+                                        <label>Room 1</label>
+                                    </div>
+                                    <div class="add_traveller">
+                                        <p>Adults (18+)</p>
+                                        <div class="from_traveller">
+                                            <div class="input-group-prepend">
+                                                <button class="input_number"><i class="fa-solid fa-minus"></i></button>
+                                            </div>
+                                            <input class="from_traveller" name="quantity" value="1" min="0" max="9" type="number">
+                                            <div class="input-group-append">
+                                                <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="add_traveller">
+                                        <p>Children (2-17)</p>
+                                        <div class="from_traveller">
+                                            <div class="input-group-prepend">
+                                                <button class="input_number"><i class="fa-solid fa-minus"></i></button>
+                                            </div>
+                                            <input class="from_traveller" name="quantity" value="0" min="0" max="6" type="number">
+                                            <div class="input-group-append">
+                                                <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="add_traveller">
+                                        <p>Infants (< 24 mths)</p>
+                                        <div class="from_traveller">
+                                            <div class="input-group-prepend">
+                                                <button class="input_number"><i class="fa-solid fa-minus"></i></button>
+                                            </div>
+                                            <input class="from_traveller" name="quantity" value="0" min="0" max="2" type="number">
+                                            <div class="input-group-append">
+                                                <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="select_list_s">
+                                <div class="wrap-inputsearch">
+                                    <input class="size_input" type="submit" value="Search>" onclick="searchFunction()" style =" background: #ffa903;height: 37px; margin-top: 20px;margin-bottom: 20px;">
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div id="Specials" class="tabcontent">
+                    <h1 style="text-align: center">There are currently no special offers available.</h1>
+                </div>
+                <div id="Package" class="tabcontent">
+                    <div class="row" >
+                        <div class="select_list" >
+                                    <!-- Origin -->
+                                    <span class="txt2" >Origin</span>
+                                    <select class="origin js-example-basic-multiple"  multiple="multiple"  >
+                                        <option value="A" >Adelaide (ADL), Australia</option>
+                                        <option value="B">Albany (ALH), Australia</option>
+                                        <option value="C">Albury (ABX), Australia</option>
+                                        <option value="D">Armidale (ARM), Australia</option>
+                                        <option value="E">Ballina (BNK), Australia</option>
+                                        <option value="F">Bendigo (BXG), Australia</option>
+                                        <option value="G">Brisbane (BNE), Australia</option>
+                                        <option value="H">Hanoi (HAN), Vietnam</option>
+                                        <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
+                                    </select>
+                                </div>
+                        <div class="select_list"><!-- Destination -->
+                                    <span class="txt2" >Destination</span>
+                                    <select class="destination js-example-basic-multiple" multiple="multiple" >
+                                        <option value="A" >Adelaide (ADL), Australia</option>
+                                        <option value="B">Albany (ALH), Australia</option>
+                                        <option value="C">Albury (ABX), Australia</option>
+                                        <option value="D">Armidale (ARM), Australia</option>
+                                        <option value="E">Ballina (BNK), Australia</option>
+                                        <option value="F">Bendigo (BXG), Australia</option>
+                                        <option value="G">Brisbane (BNE), Australia</option>
+                                        <option value="H">Hanoi (HAN), Vietnam</option>
+                                        <option value="I">Ho Chi Minh City (SGN), Vietnam </option>
+                                    </select>
+                                </div>
+                        <div class="select_list" >
+                                    <span class="txt2" >Departing</span>
+                                    <input class="size_input" type="text"  name="departing" value="02/14/2023"  readonly >
+                        </div>
+                        <div class="select_list"><!-- Traveller -->
+                            <div class="wrap-inputtraveller">
+                                <span class="txt2">Travellers</span>
+                                <input  class="size_input"    onclick= "travellerpackageFunction()"  value="" readonly>
+                            </div>
+                            <!--Traveller open-->
+                            <div class="traveller" id="traveller_Package">
+                                <div class="text_Room">
+                                    <label>Room 1</label>
+                                </div>
+                                <div class="add_traveller">
+                                    <p>Adults (18+)</p>
+                                    <div class="from_traveller">
+                                        <div class="input-group-prepend">
+                                            <button class="input_number"><i class="fa-solid fa-minus"></i></button>
+                                        </div>
+                                        <input class="from_traveller" name="quantity" value="1" min="0" max="9" type="number">
+                                        <div class="input-group-append">
+                                            <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add_traveller">
+                                    <p>Children (2-17)</p>
+                                    <div class="from_traveller">
+                                        <div class="input-group-prepend">
+                                            <button class="input_number"><i class="fa-solid fa-minus"></i></button>
+                                        </div>
+                                        <input class="from_traveller" name="quantity" value="0" min="0" max="6" type="number">
+                                        <div class="input-group-append">
+                                            <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add_traveller">
+                                    <p>Infants (< 24 mths)</p>
+                                    <div class="from_traveller">
+                                        <div class="input-group-prepend">
+                                            <button class="input_number"><i class="fa-solid fa-minus"></i></button>
+                                        </div>
+                                        <input class="from_traveller" name="quantity" value="0" min="0" max="2" type="number">
+                                        <div class="input-group-append">
+                                            <button class="input_numbers"><i class="fa-solid fa-plus "></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="select_list">
+                            <div class="wrap-inputsearch">
+                                <input class="size_input" type="submit" value="Search>" onclick="searchFunction()" style ="background: #ffa903;width:229px;height: 37px; margin-top: 20px;">
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="footer1" >TUI Cookie Notice | TUI Privacy Notice | Contact TUI |  | Manage Cookie Preferences</div>
+    <div class="footer2">
+        <div style="height:auto;width:40%;float:right; margin-right: 10px;font-size: 14px;">
+            <div>© TUI Group - This website is operated by and products are sold by TUI</div>
+            <div>International Holiday (Malaysia) SDN. BHD., Company Registration Number</div>
+            <div>(1275784-T), License Number KPK/LN: 9082.</div>
+        </div>
+    </div>
+</div>
+<script src="js/home.js"></script>
+<script src="js/language.js"></script>
+<script>
+    function openPage(pageName,elmnt,color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "#0a0a0a";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+    }
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
+<!--<script>-->
+<!--    // Get the modal-->
+<!--    var modal = document.getElementById("myModal");-->
+<!--    // Get the button that opens the modal-->
+<!--    var btn = document.getElementById("myBtn");-->
+<!--    // Get the <span> element that closes the modal-->
+<!--    var span = document.getElementsByClassName("close")[0];-->
+<!--    // When the user clicks the button, open the modal-->
+<!--    btn.onclick = function() {-->
+<!--        modal.style.display = "block";-->
+<!--    }-->
+<!--    // When the user clicks on <span> (x), close the modal-->
+<!--    span.onclick = function() {-->
+<!--        modal.style.display = "none";-->
+<!--    }-->
+<!--</script>-->
+
+<script>
+    $('.input_number, .input_numbers').on('click', function(e) {
+        const isNegative = $(e.target).closest('.input_number').is('.input_number');
+        const input = $(e.target).closest('.add_traveller').find('input');
+        if (input.is('input')) {
+            input[0][isNegative ? 'stepDown' : 'stepUp']()
+        }
+    })
+</script>
+</body>
+<script>
+    $(document).ready(function() {
+        $('.js-example-basic-multiple').select2({
+            maximumSelectionLength:1,
+        });
+    });
+        $('#select2').select2({
+            minimumResultsForSearch: 'Infinity',
+            placeholder: "search"
+    });
+        $('.hidden').attr('disabled','true');
+</script>
+</html>

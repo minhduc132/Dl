@@ -1,0 +1,471 @@
+body{
+    font-family: Tahoma;
+    margin:  0;
+    font: 13px "Arial", Helvetica, sans-serif;
+    height:100%
+}
+.logo {
+    width: 60%;
+    float: left;
+    padding:1em;
+    height:100px;
+}
+.top-menu{
+    width: 40%;
+    padding: 1em 1em;
+    float: left;
+    height: auto;
+}
+.top-menu .topnav {
+    font-family: Tahoma;
+}
+.top-menu .topnav li {
+    float: left;
+    height: 14%;
+    font-size: 13px;
+    padding: 1em 1.6em;
+}
+
+.modal {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    /*overflow: auto; !* Enable scroll if needed *!*/
+    /*background-color: rgb(0,0,0); !* Fallback color *!*/
+    /*background-color: rgba(0,0,0,0.4); !* Black w/ opacity *!*/
+}
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+ul {
+    list-style: none;
+}
+#container{
+    width: 100%;
+    height:auto;
+    background:  url('../image/banner-1.jpg') repeat;
+    background-size: cover;
+    background-repeat:no-repeat;
+    clear: left;
+    opacity: 0.9;
+}
+#container.content{
+    width:100%;
+    height: 100%;
+
+}
+.widget_list_categories {
+    height: 30em;
+    width: 95%;
+    margin-left: 5%;
+}
+a{
+    text-decoration: none
+}
+.row{
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -27px;
+    opacity: 0.9;
+
+}
+.select_list{
+    margin-top: 40px;
+    margin-left: 45px;
+}
+
+.select_list_s{
+    margin-top: 10px;
+    margin-left: 45px;
+}
+/*.origin{*/
+/*    width: 16.5em;;*/
+/*}*/
+.select2-container--default .select2-selection--single {
+    height:37px !important;
+}
+/*.destination{*/
+/*    width: 16.5em;*/
+/*}*/
+.sizefull{
+    font-size: 13px;
+    color: #666666;
+    width: 224px;
+    height: 27px;
+    margin-top: 5px;
+    border-radius: 4px;
+}
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    display:flex;
+    padding: 1em 1em 2em 1em;
+    width: 12.5%;
+    margin-left: 1px;
+    opacity: 0.8;
+}
+.tablink .fa-solid{
+    width: 30px;
+    margin-top: 3px;
+}
+.tablink:hover {
+    background-color: #f8f4f4;
+    transition: 0.7s;
+    color:black;
+}
+.circlecheck{
+    font-size: 11px;
+    float: left;
+    margin: 1.5em;
+}
+#check_radio{
+    height:40px;
+    margin-left: 33px;
+}
+h2{
+    font-weight:100;
+}
+#Flight{
+    width: 100%;
+    margin-left: -40px;
+    /*background: #dadada;*/
+    background-color: rgba(255, 255, 255, 0.8);
+    /*rgba(54, 25, 25, .00004);*/
+    /*opacity: 0.9;*/
+}
+#Stopover{
+    /*height: auto;*/
+    width: 100%;
+    margin-left: -40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    /*opacity: 0.9;*/
+}
+#Hotel{
+    /*height: auto;*/
+    width: 100%;
+    margin-left: -40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    /*opacity: 0.9;*/
+}
+#Tours{
+    /*height: auto;*/
+    width: 100%;
+    margin-left: -40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    /*opacity: 0.9;*/
+}
+#Transfers{
+    /*height: auto;*/
+    width: 100%;
+    margin-left: -40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    /*opacity: 0.9;*/
+}
+#Specials{
+    height: 225px;
+    width: 100%;
+    margin-left: -40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-top: -20px;
+}
+#Package{
+    height: 225px;
+    width: 100%;
+    margin-left: -40px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+#close_room2{
+    margin-left: 485px;
+    border-radius: 50%;
+    font-size: 20px;
+    background-color:#f67e7e;
+    color: #e51010;
+    height: 28px;
+    width: 28px;
+    border: 1px solid #ffffff;
+}
+.close_room3{
+    margin-left: 485px;
+    border-radius: 50%;
+    font-size: 20px;
+    background-color:#f67e7e;
+    color: #e51010;
+    height: 28px;
+    width: 28px;
+    border: 1px solid #ffffff;
+}
+.sizefull2{
+    font-size: 14px;
+    color: #666666;
+    width: 228px;
+    height: 30px;
+}
+.dropbtn {
+    width: 231px;
+    font-size: 15px;
+    height: 37px;
+    cursor: pointer;
+    padding: 4px;
+}
+.dropdown {
+    position: relative;
+    margin-top: 40px;
+    margin-left: 45px;
+
+}
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    margin-top:5px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 253px;
+}
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+#myModal .modal-content a{
+    height: 50px;
+    display: flex;
+    float: left;
+    width: 262px;
+    font-size: 12px;
+}
+
+.glyphicon.glyphicon-user{
+    height: 15px;
+    width: 17px;
+    float: left;
+    margin-left: -21px;
+    margin-top: 3px;
+}
+
+.txt2{
+    height: 20px;
+    margin-left: 18px;
+    display: flex;
+}
+
+.size_input{
+    width: 16.5em;
+    height: 37px;
+}
+.size_inputs{
+    width: 16.5em;
+    height: 37px;
+}
+.ipt-show{
+    width: 16.5em;
+    height: 37px;
+    background: white;
+    border: 0.3px solid black;
+    padding:8px;
+
+}
+#packages{
+    width: 100%;
+    display: flex;
+    height: 50px;
+    margin-left: -40px;
+    margin-top: 4em;
+    /*background-color: rgba(54, 52, 52, 0.6);*/
+    /*background-color: rgba(161, 105, 105, 0.5);*/
+}
+
+.traveller {
+    border: 1px solid #ffffff;
+    background-color: white;
+    width: 37em;
+    /*opacity: 0.9;*/
+    display: none;
+    z-index: 1;
+    position: absolute;
+    margin-top:5px;
+    max-height: 300px; /* Đặt giới hạn chiều cao ở đây */
+    overflow-y: auto; /* Duy trì thanh cuộn dọc */
+    overflow-x: hidden; /* Loại bỏ thanh cuộn ngang */
+}
+.traveller::-webkit-scrollbar {
+    width: 6px; /* Độ rộng của thanh cuộn dọc */
+    background-color: rgba(0, 0, 0, 0.1); /* Màu nền với độ trong suốt */
+}
+.traveller::-webkit-scrollbar-thumb {
+    background-color: rgb(129, 128, 128); /* Màu cho phần "nút" của thanh cuộn */
+    border-radius: 3px; /* Để làm tròn phần "nút" */
+}
+
+
+.text_Room{
+    margin-left: 29px;
+    display: flex;
+    /*margin-top: 30px;*/
+}
+.add_traveller{
+    height: 65px;
+    display: table-cell;
+    width: 200px;
+}
+.add_traveller p{
+    margin-left:12px;
+}
+.from_traveller span{
+    border: 1px solid #121111;
+}
+.quantity{
+    width:96px;
+}
+.from_traveller{
+    display: flex;
+    width: 165px;
+    text-align: center;
+    border: 0.5px solid lightgrey;
+}
+.input_number:hover{
+    background: #850b48;
+}
+.input_numbers:hover{
+    background: #850b48;
+}
+.date{
+    width: 224px;
+}
+.select2-selection--multiple {
+    width: 16.5em;
+    height: 37px;
+}
+#add_room{
+    font-size: 10px;
+    margin-left: 3px;
+    color: #850b48;
+    background: white;
+    border: 1px solid white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.room{
+    display: none;
+}
+.select2-container--default .select2-selection--single {
+    width: 165px;
+    height: 20px;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+    list-style: none;
+    background: white;
+    border: 1px solid white;
+}
+.ui-datepicker td {
+    padding: 2px;
+    border: 1px solid white !important;
+}
+.ui-state-default, .ui-widget-content .ui-state-default{
+    border: 1px solid #ffffff !important;
+    /*background: #fffefe ;*/
+    font-weight: normal;
+    color: #454545 !important;
+}
+.child{
+    width: 33%;
+    float: left;
+    display: none;
+
+}
+.text_radio.traveller{
+    position:absolute;
+    height: 120px;
+    width: 100%;
+}
+.input_number{
+    border: 1px solid white;
+    color: black;
+}
+.input_numbers{
+    border: 1px solid white;
+    color: black;
+}
+.from_traveller[type="number"]::-webkit-inner-spin-button,
+.from_traveller[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+@media screen and (max-width: 320px) {
+    /*@media (max-width: 1000px) {*/
+    .logo {
+        width: 60%;
+        height: auto;
+
+    }
+    .top-menu{
+        width:40%;
+        height:20%
+    }
+
+}

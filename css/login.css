@@ -1,0 +1,22 @@
+.from{
+  color: #e51010;
+  width: 250px;
+  height:250px;
+}
+
+
+#main #left{
+  width: 600px;
+  float: left;
+  min-height: 400px;
+  background: cornsilk;
+  border: 1px solid;
+}
+#main #right h2{
+  text-align: center;
+}
+#main #right h4{
+  text-align: center;
+}
+
+
